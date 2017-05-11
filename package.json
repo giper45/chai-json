@@ -12,7 +12,15 @@
   },
   "keywords": [
     "chai-json",
-    "\"chai\""
+    "array", 
+    "assert", 
+    "assertion", 
+    "chai-plugin", 
+    "json", 
+    "objects", 
+    "test", 
+    "testing",
+    "chai"
   ],
   "author": "giper",
   "license": "MIT",
