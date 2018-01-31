@@ -15,7 +15,7 @@ function isJSON(p) {
   }
 }
 const plugin = function plugin(chai, utils) {
-  Assertion.addMethod('jsonFile', function assertion() {
+  chai.Assertion.addMethod('jsonFile', function assertion() {
     const self = this;
     const srcPath = utils.flag(self, 'object');
     const isJSONFile = isJSON(srcPath);
@@ -26,7 +26,7 @@ const plugin = function plugin(chai, utils) {
     }
   });
 
-  Assertion.addMethod('jsonObj', function assertion(srcObj) {
+  chai.Assertion.addMethod('jsonObj', function assertion(srcObj) {
     const self = this;
     const srcPath = utils.flag(self, 'object');
     const testJSON = utils.flag(self, 'jsonFile');
@@ -34,7 +34,7 @@ const plugin = function plugin(chai, utils) {
     self.assert(_.isEqual(testJSON, srcObj), `Expect JSON obj in ${srcPath} to be eql to: ${JSON.stringify(srcObj)}`);
   });
 
-  Assertion.addMethod('jsonWithProps', function assertion(srcObj) {
+  chai.Assertion.addMethod('jsonWithProps', function assertion(srcObj) {
     const self = this;
     const srcPath = utils.flag(self, 'object');
     const testJSON = jsonfile.readFileSync(srcPath);
